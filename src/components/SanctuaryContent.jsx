@@ -199,8 +199,7 @@ export default function SanctuaryContent({ scrollProgress, onYouTubeActive, onWi
                 <Heart className="w-3 h-3 animate-pulse flex-shrink-0" style={{ color: '#f9a8d4', fill: 'rgba(249,168,212,0.3)' }} />
               </div>
 
-              <div className="overflow-y-auto" style={{ maxHeight: '55vh' }}>
-                <div className="space-y-3 sm:space-y-4" style={{ color: 'rgba(252,231,243,0.88)' }}>
+              <div className="space-y-3 sm:space-y-4 pb-2" style={{ color: 'rgba(252,231,243,0.92)' }}>
                   <p className="text-sm sm:text-base leading-relaxed">
                     <span className="text-3xl sm:text-5xl font-bold font-serif-lux float-left mr-2 sm:mr-3 mt-1 leading-none animate-ink-drop"
                       style={{ color: '#f9a8d4', textShadow: '0 0 20px rgba(249,168,212,0.5)' }}>S</span>
@@ -214,10 +213,9 @@ export default function SanctuaryContent({ scrollProgress, onYouTubeActive, onWi
                     <span className="font-semibold" style={{ color: '#f9a8d4' }}>እህተ ሚካዔል 😊</span>{' '}
                     to receive all the peace, love, and happiness she deserves.
                   </p>
-                  <p className="text-sm sm:text-base leading-[1.85]">
+                  <p className="text-sm sm:text-base leading-[1.85]" style={{ color: 'rgba(252,231,243,0.95)' }}>
                     More than anything, I am deeply grateful that I have, and have had a friend like you in my life. Your strength, your heart, and the person you are have meant more to me than I can fully express. And I am happy that I love you with all my heart. 😊
                   </p>
-                </div>
               </div>
 
               <div className="mt-4 pt-3 flex items-center justify-between"

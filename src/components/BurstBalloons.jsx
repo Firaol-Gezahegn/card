@@ -176,18 +176,18 @@ function Balloon({ word, color, glow, x, y, size, sway, onPop }) {
   )
 }
 
-// Positions: scattered organically around the screen
+// Positions: 2 rows across full screen width, clear of the title prompt (top 28%)
 const POSITIONS = [
-  { x: '8%',  y: '55%', size: 64, sway: 3.2 },
-  { x: '22%', y: '65%', size: 54, sway: 2.8 },
-  { x: '36%', y: '70%', size: 70, sway: 3.6 },
-  { x: '50%', y: '60%', size: 58, sway: 2.5 },
-  { x: '64%', y: '68%', size: 66, sway: 3.1 },
-  { x: '78%', y: '58%', size: 52, sway: 2.9 },
-  { x: '88%', y: '66%', size: 62, sway: 3.4 },
-  { x: '15%', y: '72%', size: 48, sway: 2.6 },
-  { x: '44%', y: '75%', size: 56, sway: 3.0 },
-  { x: '72%', y: '72%', size: 60, sway: 2.7 },
+  { x: '4%',  y: '30%', size: 56, sway: 3.1 },
+  { x: '18%', y: '48%', size: 62, sway: 2.8 },
+  { x: '32%', y: '33%', size: 52, sway: 3.4 },
+  { x: '46%', y: '52%', size: 68, sway: 2.6 },
+  { x: '60%', y: '30%', size: 58, sway: 3.2 },
+  { x: '74%', y: '50%', size: 54, sway: 2.9 },
+  { x: '86%', y: '34%', size: 60, sway: 3.5 },
+  { x: '10%', y: '64%', size: 50, sway: 2.7 },
+  { x: '40%', y: '68%', size: 56, sway: 3.0 },
+  { x: '70%', y: '65%', size: 52, sway: 2.8 },
 ]
 
 export default function BurstBalloons({ opacity }) {
@@ -207,28 +207,18 @@ export default function BurstBalloons({ opacity }) {
         }} />
       </div>
 
-      {/* Prompt */}
-      <div className="absolute top-[8%] left-1/2 -translate-x-1/2 text-center pointer-events-none px-4 w-full max-w-xs sm:max-w-sm">
+      {/* Prompt — compact at very top */}
+      <div className="absolute top-[3%] left-1/2 -translate-x-1/2 text-center pointer-events-none px-4 w-full">
         {poppedCount < total ? (
-          <>
-            <p className="text-[10px] sm:text-xs uppercase tracking-[0.35em] mb-2"
-              style={{ color: 'rgba(249,168,212,0.45)' }}>
-              Pop each balloon
-            </p>
-            <p className="text-sm sm:text-xl font-bold font-serif-lux"
-              style={{ color: 'rgba(252,231,243,0.7)', textShadow: '0 0 30px rgba(249,168,212,0.3)' }}>
-              These words describe who you are 🎈
-            </p>
-          </>
+          <p className="text-xs sm:text-sm font-bold font-serif-lux"
+            style={{ color: 'rgba(252,231,243,0.55)' }}>
+            🎈 Pop each balloon — a word about you is inside
+          </p>
         ) : (
-          <>
-            <p className="text-[10px] sm:text-xs uppercase tracking-[0.35em] mb-2"
-              style={{ color: 'rgba(249,168,212,0.45)' }}>This is you</p>
-            <p className="text-sm sm:text-xl font-bold font-serif-lux animate-fade-in-up"
-              style={{ color: '#f9a8d4', textShadow: '0 0 30px rgba(249,168,212,0.5)' }}>
-              All of this — is who you are ✨
-            </p>
-          </>
+          <p className="text-sm sm:text-base font-bold font-serif-lux animate-fade-in-up"
+            style={{ color: '#f9a8d4', textShadow: '0 0 30px rgba(249,168,212,0.5)' }}>
+            All of this — is who you are ✨
+          </p>
         )}
       </div>
 
