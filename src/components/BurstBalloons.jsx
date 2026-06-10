@@ -188,18 +188,18 @@ export default function BurstBalloons({ opacity }) {
               key={w.id}
               className="animate-scale-in"
               style={{
-                padding: '6px 14px',
+                padding: '7px 16px',
                 borderRadius: '999px',
-                fontSize: 'clamp(11px, 3vw, 15px)',
-                fontWeight: 700,
+                fontSize: 'clamp(12px, 3.2vw, 16px)',
+                fontWeight: 800,
                 fontFamily: 'Cinzel, serif',
-                letterSpacing: '0.04em',
-                color: w.glow,
-                background: w.color + '1a',
-                border: '1.5px solid ' + w.color + '55',
-                boxShadow: '0 0 14px ' + w.color + '33',
-                backdropFilter: 'blur(12px)',
-                textShadow: '0 0 12px ' + w.color + '77',
+                letterSpacing: '0.05em',
+                color: '#ffffff',
+                background: w.color + '55',
+                border: '2px solid ' + w.color + 'cc',
+                boxShadow: '0 0 22px ' + w.color + '88, 0 0 6px ' + w.color + '44',
+                backdropFilter: 'blur(14px)',
+                textShadow: '0 0 10px ' + w.color + ', 0 1px 2px rgba(0,0,0,0.6)',
                 whiteSpace: 'nowrap',
               }}
             >
