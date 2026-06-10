@@ -145,24 +145,27 @@ function Balloon({ word, color, glow, x, y, size, sway, onPop }) {
           </div>
         </div>
       ) : showWord ? (
-        /* Revealed word */
+        /* Revealed word — centered in viewport, never clips off edge */
         <div
-          className="absolute animate-scale-in pointer-events-none"
+          className="fixed pointer-events-none animate-scale-in"
           style={{
-            left: x, top: y,
-            transform: 'translate(-20%, -30%)',
+            left: '50%',
+            top: '42%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 56,
           }}
         >
           <div
-            className="px-5 py-3 rounded-2xl font-bold font-serif-lux tracking-wider text-sm sm:text-base"
+            className="px-5 py-3 rounded-2xl font-bold font-serif-lux tracking-wider text-base sm:text-lg text-center"
             style={{
-              background: color + '18',
-              border: '2px solid ' + color + '55',
+              background: color + '20',
+              border: '2px solid ' + color + '66',
               color: glow,
-              boxShadow: '0 0 30px ' + color + '44, inset 0 1px 0 rgba(255,255,255,0.15)',
-              backdropFilter: 'blur(12px)',
-              textShadow: '0 0 16px ' + color + '88',
-              whiteSpace: 'nowrap',
+              boxShadow: '0 0 40px ' + color + '55, inset 0 1px 0 rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(16px)',
+              textShadow: '0 0 20px ' + color + '99',
+              minWidth: '120px',
+              maxWidth: '80vw',
             }}
           >
             {word} ✨
@@ -205,23 +208,27 @@ export default function BurstBalloons({ opacity }) {
       </div>
 
       {/* Prompt */}
-      <div className="absolute top-[12%] left-1/2 -translate-x-1/2 text-center pointer-events-none px-4">
+      <div className="absolute top-[8%] left-1/2 -translate-x-1/2 text-center pointer-events-none px-4 w-full max-w-xs sm:max-w-sm">
         {poppedCount < total ? (
           <>
             <p className="text-[10px] sm:text-xs uppercase tracking-[0.35em] mb-2"
               style={{ color: 'rgba(249,168,212,0.45)' }}>
               Pop each balloon
             </p>
-            <p className="text-base sm:text-2xl font-bold font-serif-lux"
+            <p className="text-sm sm:text-xl font-bold font-serif-lux"
               style={{ color: 'rgba(252,231,243,0.7)', textShadow: '0 0 30px rgba(249,168,212,0.3)' }}>
-              A word awaits inside 🎈
+              These words describe who you are 🎈
             </p>
           </>
         ) : (
-          <p className="text-base sm:text-xl font-bold font-serif-lux animate-fade-in-up"
-            style={{ color: '#f9a8d4', textShadow: '0 0 30px rgba(249,168,212,0.5)' }}>
-            These are my wishes for you ✨
-          </p>
+          <>
+            <p className="text-[10px] sm:text-xs uppercase tracking-[0.35em] mb-2"
+              style={{ color: 'rgba(249,168,212,0.45)' }}>This is you</p>
+            <p className="text-sm sm:text-xl font-bold font-serif-lux animate-fade-in-up"
+              style={{ color: '#f9a8d4', textShadow: '0 0 30px rgba(249,168,212,0.5)' }}>
+              All of this — is who you are ✨
+            </p>
+          </>
         )}
       </div>
 

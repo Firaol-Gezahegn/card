@@ -84,37 +84,27 @@ export default function BirthdayCandles({ opacity, pointerEvents, onWishMade }) 
       )}
 
       {/* ── Wish Bubbles ── */}
-      {wishState === 'celebration' && wishBubbles.map((bubble) => (
-        <div key={bubble.id} className="absolute pointer-events-none animate-float-up z-50"
-          style={{ left: `${bubble.x}%`, bottom: '15%', animationDelay: `${bubble.delay}s` }}>
-          <div className="relative">
-            {/* Orbiting sparkle dots */}
-            {[0,1,2,3].map(j => (
-              <div key={j} className="absolute w-2 h-2 rounded-full animate-ping"
+      {wishState === 'celebration' && (
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-24 gap-3 pointer-events-none z-50">
+          {wishBubbles.map((bubble) => (
+            <div key={bubble.id} className="animate-fade-in-up"
+              style={{ animationDelay: bubble.delay + 's', animationFillMode: 'both' }}>
+              <div className="flex items-center gap-2 px-5 py-3 rounded-2xl font-bold font-serif-lux tracking-wide"
                 style={{
-                  background: bubble.color,
-                  top: j < 2 ? '-6px' : 'calc(100% + 2px)',
-                  left: j % 2 === 0 ? '-6px' : 'calc(100% + 2px)',
-                  animationDelay: `${j * 0.2}s`,
-                  opacity: 0.7,
-                }} />
-            ))}
-            {/* Bubble */}
-            <div className="px-7 py-4 rounded-2xl text-base font-bold font-serif-lux tracking-wide shadow-2xl"
-              style={{
-                background: `linear-gradient(135deg, ${bubble.color}28, ${bubble.color}12)`,
-                border: `2px solid ${bubble.color}66`,
-                color: '#fce7f3',
-                boxShadow: `0 8px 32px ${bubble.color}44, inset 0 1px 0 rgba(255,255,255,0.15)`,
-                backdropFilter: 'blur(20px)',
-                whiteSpace: 'nowrap',
-              }}>
-              <span style={{ color: bubble.color }}>{bubble.text}</span>
-              <span className="ml-2 text-sm">✨</span>
+                  background: 'linear-gradient(135deg, ' + bubble.color + '22, ' + bubble.color + '0a)',
+                  border: '2px solid ' + bubble.color + '55',
+                  color: '#fce7f3',
+                  boxShadow: '0 6px 28px ' + bubble.color + '33, inset 0 1px 0 rgba(255,255,255,0.12)',
+                  backdropFilter: 'blur(18px)',
+                  fontSize: 'clamp(13px, 3.5vw, 16px)',
+                }}>
+                <span style={{ color: bubble.color }}>✨</span>
+                <span>{bubble.text}</span>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
+      )}
 
       {/* ── Card ── */}
       <div className="w-full max-w-sm sm:max-w-md text-center relative z-10">
