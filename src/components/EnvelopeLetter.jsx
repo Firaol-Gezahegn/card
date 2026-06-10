@@ -98,7 +98,7 @@ export default function EnvelopeLetter({ opacity, pointerEvents }) {
             <div className="text-rose-900/80 font-poetry text-[15px] sm:text-base leading-[1.9] space-y-5">
               <p>
                 <span className="text-3xl text-rose-500 font-bold font-serif-lux mr-2 float-left mt-1">S</span>unny,
-                You are the strongest, most independent, and most selfless person I know — the kind of woman who
+                You are the strongest, most independent, and most selfless person I know, the kind of woman who
                 constantly sacrifices herself for others without ever asking for or needing anything in return.
                 I want you to know that the deep care you pour into everyone else has a way of coming back to you.
               </p>
@@ -112,7 +112,7 @@ export default function EnvelopeLetter({ opacity, pointerEvents }) {
             <div className="mt-8 pt-5 border-t border-rose-200/40 text-center">
               <p className="text-lg sm:text-xl text-rose-800/80 font-poetry italic leading-[2.0]">
                 "More than anything, I am just deeply grateful<br />
-                that I have — and have had —<br />
+                that I have and have had <br />
                 a friend like you in my life.<br /><br />
                 And I am happy that I love you<br />
                 with all my heart. 😊"

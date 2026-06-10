@@ -48,7 +48,7 @@ export default function BirthdayCandles({ opacity, pointerEvents, onWishMade }) 
   }
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 transition-opacity duration-500"
+    <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-8 transition-opacity duration-500"
       style={{ opacity, pointerEvents: opacity > 0.3 ? pointerEvents : 'none' }}>
 
       {/* Glow orb */}
@@ -117,88 +117,79 @@ export default function BirthdayCandles({ opacity, pointerEvents, onWishMade }) 
       ))}
 
       {/* ── Card ── */}
-      <div className="max-w-md w-full text-center relative z-10">
-        <div className="rounded-3xl p-8 sm:p-10" style={glass}>
+      <div className="w-full max-w-sm sm:max-w-md text-center relative z-10">
+        <div className="rounded-2xl sm:rounded-3xl p-4 sm:p-8" style={glass}>
 
-          <h3 className="text-xl font-bold font-serif-lux tracking-wider mb-7" style={{ color: '#fce7f3' }}>
+          <h3 className="text-base sm:text-xl font-bold font-serif-lux tracking-wider mb-4 sm:mb-7" style={{ color: '#fce7f3' }}>
             Make a Birthday Wish
           </h3>
 
           {/* ── Cake ── */}
-          <div className="relative mx-auto mb-7" style={{ width: '210px', height: '170px' }}>
+          <div className="relative mx-auto mb-4 sm:mb-7" style={{ width: '160px', height: '130px' }}>
             {/* Glow under cake */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-8 rounded-full"
-              style={{ background: 'radial-gradient(ellipse, rgba(190,24,93,0.35) 0%, transparent 70%)', filter: 'blur(8px)' }} />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full"
+              style={{ width: '130px', height: '24px', background: 'radial-gradient(ellipse, rgba(190,24,93,0.35) 0%, transparent 70%)', filter: 'blur(8px)' }} />
 
             {/* Bottom tier */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2" style={{
-              width: '188px', height: '58px',
+              width: '148px', height: '44px',
               background: 'linear-gradient(180deg, #f472b6 0%, #be185d 100%)',
-              borderRadius: '10px 10px 6px 6px',
-              boxShadow: '0 6px 20px rgba(190,24,93,0.5)',
+              borderRadius: '8px 8px 5px 5px',
+              boxShadow: '0 4px 16px rgba(190,24,93,0.5)',
             }}>
-              <div className="absolute top-0 left-0 right-0 h-2 rounded-t-lg" style={{ background: 'rgba(255,255,255,0.3)' }} />
-              <div className="absolute bottom-3 left-0 right-0 text-center"
-                style={{ fontSize: '7px', color: 'rgba(255,255,255,0.6)', letterSpacing: '0.22em', fontWeight: 700 }}>
+              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-lg" style={{ background: 'rgba(255,255,255,0.3)' }} />
+              <div className="absolute bottom-2 left-0 right-0 text-center"
+                style={{ fontSize: '6px', color: 'rgba(255,255,255,0.6)', letterSpacing: '0.2em', fontWeight: 700 }}>
                 HAPPY BIRTHDAY
               </div>
             </div>
 
             {/* Middle tier */}
             <div className="absolute left-1/2 -translate-x-1/2" style={{
-              bottom: '55px', width: '146px', height: '48px',
+              bottom: '42px', width: '114px', height: '38px',
               background: 'linear-gradient(180deg, #fb7185 0%, #f472b6 100%)',
-              borderRadius: '10px 10px 6px 6px',
-              boxShadow: '0 4px 14px rgba(244,114,182,0.45)',
+              borderRadius: '8px 8px 5px 5px',
+              boxShadow: '0 3px 12px rgba(244,114,182,0.45)',
             }}>
-              <div className="absolute top-0 left-0 right-0 h-2 rounded-t-lg" style={{ background: 'rgba(255,255,255,0.25)' }} />
+              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-lg" style={{ background: 'rgba(255,255,255,0.25)' }} />
             </div>
 
             {/* Top tier */}
             <div className="absolute left-1/2 -translate-x-1/2" style={{
-              bottom: '100px', width: '104px', height: '40px',
+              bottom: '77px', width: '80px', height: '30px',
               background: 'linear-gradient(180deg, #fce7f3 0%, #f9a8d4 100%)',
-              borderRadius: '10px 10px 6px 6px',
-              boxShadow: '0 4px 14px rgba(249,168,212,0.4)',
+              borderRadius: '8px 8px 5px 5px',
+              boxShadow: '0 3px 10px rgba(249,168,212,0.4)',
             }}>
-              <div className="absolute top-0 left-0 right-0 h-2 rounded-t-lg" style={{ background: 'rgba(255,255,255,0.4)' }} />
+              <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-lg" style={{ background: 'rgba(255,255,255,0.4)' }} />
             </div>
 
             {/* Candles */}
             {CANDLE_COLORS.map((color, i) => {
-              const x = 50 + i * 24
+              const x = 38 + i * 18
               return (
                 <div key={i}
                   className="absolute cursor-pointer group"
-                  style={{ left: `${x}px`, bottom: '138px', transform: 'translateX(-50%)' }}
+                  style={{ left: `${x}px`, bottom: '105px', transform: 'translateX(-50%)' }}
                   onClick={() => blowCandle(i)}>
-                  {/* Candle body */}
                   <div className="transition-transform duration-200 group-hover:scale-125 group-active:scale-95"
                     style={{
-                      width: '11px', height: '30px', margin: '0 auto',
-                      background: `linear-gradient(180deg, ${color}ff, ${color}99)`,
-                      borderRadius: '4px 4px 3px 3px',
-                      boxShadow: `0 0 12px ${color}88`,
+                      width: '9px', height: '22px', margin: '0 auto',
+                      background: 'linear-gradient(180deg, ' + color + 'ff, ' + color + '99)',
+                      borderRadius: '3px 3px 2px 2px',
+                      boxShadow: '0 0 10px ' + color + '88',
                     }} />
                   {!blown[i] ? (
-                    <>
-                      {/* Flame */}
-                      <div className="animate-pulse mx-auto"
-                        style={{
-                          width: '14px', height: '22px',
-                          marginTop: '-3px',
-                          background: 'linear-gradient(180deg, #fffde7 0%, #ffe066 30%, #ffaa00 65%, #ff6600 100%)',
-                          borderRadius: '50% 50% 30% 30% / 60% 60% 40% 40%',
-                          boxShadow: `0 0 12px #ffaa00cc, 0 0 24px ${color}66`,
-                        }} />
-                      {/* Glow halo */}
-                      <div className="absolute -inset-3 rounded-full pointer-events-none"
-                        style={{ background: `radial-gradient(circle, ${color}33 0%, transparent 70%)`, top: '-20px' }} />
-                    </>
+                    <div className="animate-pulse mx-auto"
+                      style={{
+                        width: '11px', height: '18px', marginTop: '-2px',
+                        background: 'linear-gradient(180deg, #fffde7 0%, #ffe066 30%, #ffaa00 65%, #ff6600 100%)',
+                        borderRadius: '50% 50% 30% 30% / 60% 60% 40% 40%',
+                        boxShadow: '0 0 10px #ffaa00cc, 0 0 20px ' + color + '66',
+                      }} />
                   ) : (
-                    /* Smoke wisp */
                     <div style={{
-                      width: '2px', height: '18px', margin: '0 auto', marginTop: '-2px',
+                      width: '2px', height: '14px', margin: '0 auto', marginTop: '-2px',
                       background: 'linear-gradient(to top, rgba(180,180,200,0.5), transparent)',
                       borderRadius: '2px',
                     }} />
@@ -209,15 +200,15 @@ export default function BirthdayCandles({ opacity, pointerEvents, onWishMade }) 
           </div>
 
           {/* Progress */}
-          <div className="flex justify-center gap-3 mb-5">
+          <div className="flex justify-center gap-2 sm:gap-3 mb-4">
             {blown.map((b, i) => (
-              <div key={i} className="transition-all duration-400 rounded-full"
+              <div key={i} className="transition-all duration-300 rounded-full"
                 style={{
-                  width: b ? '14px' : '10px',
-                  height: b ? '14px' : '10px',
+                  width: b ? '12px' : '8px',
+                  height: b ? '12px' : '8px',
                   background: b ? CANDLE_COLORS[i] : 'rgba(249,168,212,0.15)',
-                  boxShadow: b ? `0 0 10px ${CANDLE_COLORS[i]}` : 'none',
-                  border: `1px solid ${b ? CANDLE_COLORS[i] : 'rgba(249,168,212,0.2)'}`,
+                  boxShadow: b ? '0 0 8px ' + CANDLE_COLORS[i] : 'none',
+                  border: '1px solid ' + (b ? CANDLE_COLORS[i] : 'rgba(249,168,212,0.2)'),
                 }} />
             ))}
           </div>

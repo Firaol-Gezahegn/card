@@ -62,16 +62,6 @@ export default function SanctuaryContent({ scrollProgress, onYouTubeActive, onWi
 
   useEffect(() => { onYouTubeActive?.(youtubeOpacity > 0.4) }, [youtubeOpacity > 0.4])
 
-  const photos = [
-    { url: "/assets/seni-2.jpeg", caption: "Beautiful Sunny" },
-    { url: "/assets/seni-3.jpeg", caption: "Radiant Smile" },
-    { url: "/assets/seni-4.jpeg", caption: "Golden Moments" },
-    { url: "/assets/seni-5.jpeg", caption: "Precious Memory" },
-    { url: "/assets/seni-6.jpeg", caption: "Glowing Spirit" },
-    { url: "/assets/seni-7.jpeg", caption: "Forever Cherished" },
-    { url: "/assets/seni-8.jpeg", caption: "Sunshine Moments" },
-  ]
-
   const dots = [
     { t: 0,    label: "🌸" },
     { t: 0.20, label: "💌" },
@@ -188,59 +178,58 @@ export default function SanctuaryContent({ scrollProgress, onYouTubeActive, onWi
         </div>
 
         {/* ── SECTION 2: LETTER ── */}
-        <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-8 transition-opacity duration-500"
+        <div className="absolute inset-0 flex items-start sm:items-center justify-center px-3 sm:px-8 py-4 sm:py-0 overflow-y-auto transition-opacity duration-500"
           style={{ opacity: letterOpacity, pointerEvents: letterOpacity > 0.3 ? "auto" : "none" }}>
           <GlowOrb color="#7c3aed" size={400} opacity={0.13} />
           <div className="w-full max-w-xl">
-            <div className="rounded-2xl sm:rounded-3xl p-5 sm:p-10 relative overflow-hidden" style={glass}>
-              <div className="absolute top-3 left-3 text-rose-400/25 text-xl sm:text-2xl">❧</div>
-              <div className="absolute top-3 right-3 text-rose-400/25 text-xl sm:text-2xl" style={{ transform: 'scaleX(-1)' }}>❧</div>
+            <div className="rounded-2xl sm:rounded-3xl p-4 sm:p-8 relative overflow-hidden" style={glass}>
+              <div className="absolute top-3 left-3 text-rose-400/20 text-xl">❧</div>
+              <div className="absolute top-3 right-3 text-rose-400/20 text-xl" style={{ transform: 'scaleX(-1)' }}>❧</div>
 
-              <div className="flex items-center justify-between mb-5 pb-4"
+              <div className="flex items-center justify-between mb-4 pb-3"
                 style={{ borderBottom: '1px solid rgba(249,168,212,0.15)' }}>
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{ background: 'linear-gradient(135deg, #be185d, #7c3aed)' }}>
-                    <span className="text-xs">💌</span>
+                    <span className="text-[10px]">💌</span>
                   </div>
-                  <span className="text-[9px] sm:text-[10px] uppercase font-bold font-serif-lux tracking-widest"
-                    style={{ color: 'rgba(249,168,212,0.7)' }}>A Birthday Letter</span>
+                  <span className="text-[9px] uppercase font-bold font-serif-lux tracking-widest"
+                    style={{ color: 'rgba(249,168,212,0.65)' }}>A Birthday Letter</span>
                 </div>
-                <Heart className="w-3.5 h-3.5 animate-pulse flex-shrink-0" style={{ color: '#f9a8d4', fill: 'rgba(249,168,212,0.3)' }} />
+                <Heart className="w-3 h-3 animate-pulse flex-shrink-0" style={{ color: '#f9a8d4', fill: 'rgba(249,168,212,0.3)' }} />
               </div>
 
-              <div className="space-y-3 sm:space-y-4" style={{ color: 'rgba(252,231,243,0.88)' }}>
-                <p className="text-sm sm:text-base leading-relaxed">
-                  <span className="text-3xl sm:text-5xl font-bold font-serif-lux float-left mr-2 sm:mr-3 mt-1 leading-none animate-ink-drop"
-                    style={{ color: '#f9a8d4', textShadow: '0 0 20px rgba(249,168,212,0.5)' }}>S</span>
-                  unny,
-                </p>
-                <p className="text-sm sm:text-base leading-[1.8]">
-                  You are the strongest, most independent, and most selfless person I know — the kind of woman who
-                  constantly sacrifices herself for others without ever asking for anything in return.
-                  The deep care you pour into everyone else has a way of coming back to you.
-                </p>
-                <p className="text-sm sm:text-base leading-[1.8]">
-                  I wish and pray with all my heart for{' '}
-                  <span className="font-semibold" style={{ color: '#f9a8d4' }}>እህተ ሚካዔል 😊</span>{' '}
-                  to have the absolute peace and love she deserves.
-                </p>
-                <p className="text-sm sm:text-base leading-[1.8]">
-                  More than anything, I am deeply grateful that I have — and have had — a friend like you.
-                  And I am happy that I love you with all my heart. 😊
-                </p>
+              <div className="overflow-y-auto" style={{ maxHeight: '55vh' }}>
+                <div className="space-y-3 sm:space-y-4" style={{ color: 'rgba(252,231,243,0.88)' }}>
+                  <p className="text-sm sm:text-base leading-relaxed">
+                    <span className="text-3xl sm:text-5xl font-bold font-serif-lux float-left mr-2 sm:mr-3 mt-1 leading-none animate-ink-drop"
+                      style={{ color: '#f9a8d4', textShadow: '0 0 20px rgba(249,168,212,0.5)' }}>S</span>
+                    unny,
+                  </p>
+                  <p className="text-sm sm:text-base leading-[1.85]">
+                    You are the strongest, most independent, and most selfless person I know, the kind of woman who gives so much of herself to others without ever expecting anything in return. The care, kindness, and love you pour into the lives of those around you have a way of finding their way back, and I truly hope they do.
+                  </p>
+                  <p className="text-sm sm:text-base leading-[1.85]">
+                    I wish and pray with all my heart for{' '}
+                    <span className="font-semibold" style={{ color: '#f9a8d4' }}>እህተ ሚካዔል 😊</span>{' '}
+                    to receive all the peace, love, and happiness she deserves.
+                  </p>
+                  <p className="text-sm sm:text-base leading-[1.85]">
+                    More than anything, I am deeply grateful that I have, and have had a friend like you in my life. Your strength, your heart, and the person you are have meant more to me than I can fully express. And I am happy that I love you with all my heart. 😊
+                  </p>
+                </div>
               </div>
 
-              <div className="mt-5 sm:mt-7 pt-4 sm:pt-5 flex items-center justify-between"
-                style={{ borderTop: '1px solid rgba(249,168,212,0.12)' }}>
+              <div className="mt-4 pt-3 flex items-center justify-between"
+                style={{ borderTop: '1px solid rgba(249,168,212,0.1)' }}>
                 <button onClick={() => setLyricsOpen(v => !v)}
-                  className="flex items-center gap-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 sm:px-4 py-2 rounded-xl transition-all hover:scale-105 pointer-events-auto"
-                  style={{ background: 'rgba(192,132,252,0.12)', color: '#c084fc', border: '1px solid rgba(192,132,252,0.25)' }}>
-                  <Music className="w-3 h-3" /> {lyricsOpen ? 'Close Lyrics' : 'Song Lyrics'}
+                  className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider px-3 py-2 rounded-xl transition-all hover:scale-105 pointer-events-auto"
+                  style={{ background: 'rgba(192,132,252,0.1)', color: '#c084fc', border: '1px solid rgba(192,132,252,0.2)' }}>
+                  <Music className="w-3 h-3" /> {lyricsOpen ? 'Close' : 'Lyrics'}
                 </button>
                 <div className="text-right">
-                  <p className="text-[10px] sm:text-xs" style={{ color: 'rgba(249,168,212,0.5)' }}>With all my love,</p>
-                  <p className="text-sm sm:text-base font-bold font-serif-lux mt-0.5" style={{ color: '#f9a8d4' }}>Firaol</p>
+                  <p className="text-[9px]" style={{ color: 'rgba(249,168,212,0.45)' }}>With all my love,</p>
+                  <p className="text-sm font-bold font-serif-lux mt-0.5" style={{ color: '#f9a8d4' }}>Firaol</p>
                 </div>
               </div>
             </div>

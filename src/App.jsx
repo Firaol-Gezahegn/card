@@ -10,7 +10,6 @@ import CosmicObjects from './components/CosmicObjects'
 import SanctuaryContent from './components/SanctuaryContent'
 import SparklerCursor from './components/SparklerCursor'
 import BalloonConfetti from './components/BalloonConfetti'
-import WordRain from './components/WordRain'
 
 const GOOGLE_CLIENT_ID = "803885932571-hfni9gnvscf0sqsi77bl4lie75o7j7s8.apps.googleusercontent.com"
 
@@ -100,7 +99,6 @@ function App() {
           <>
             <SparklerCursor />
             <BalloonConfetti showConfetti={wishMade} />
-            <WordRain />
             <AudioPlayer ref={audioRef} onPlayStateChange={() => {}} />
             <div className="fixed inset-0 w-full h-full z-0">
               <Canvas camera={{ position: [0, 0, 0], fov: 75, near: 0.1, far: 500 }} gl={{ antialias: true, alpha: false }}>
